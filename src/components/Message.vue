@@ -4,10 +4,7 @@
     <!-- Logo -->
     <div class="logo">
       <img class="logo-img" :src="siteLogo" alt="logo" />
-      <div :class="{ name: true, 'text-hidden': true, long: siteUrl[0].length >= 6 }">
-        <span class="bg">{{ siteUrl[0] }}</span>
-        <span class="sm">.{{ siteUrl[1] }}</span>
-      </div>
+      <img class="domain-banner" src="/images/domain-banner.png" alt="chulinchen.top" />
     </div>
     <!-- 简介 -->
     <div class="description cards" @click="changeBox">
@@ -38,17 +35,6 @@ const store = mainStore();
 
 // 主页站点logo
 const siteLogo = import.meta.env.VITE_SITE_MAIN_LOGO;
-// 站点链接
-const siteUrl = computed(() => {
-  const url = import.meta.env.VITE_SITE_URL;
-  if (!url) return "imsyy.top".split(".");
-  // 判断协议前缀
-  if (url.startsWith("http://") || url.startsWith("https://")) {
-    const urlFormat = url.replace(/^(https?:\/\/)/, "");
-    return urlFormat.split(".");
-  }
-  return url.split(".");
-});
 
 // 简介区域文字
 const descriptionText = reactive({
@@ -99,33 +85,18 @@ watch(
       border-radius: 50%;
       width: 120px;
     }
-    .name {
-      width: 100%;
+    .domain-banner {
+      height: 80px;
       padding-left: 22px;
       transform: translateY(-8px);
-      font-family: "Pacifico-Regular";
-
-      .bg {
-        font-size: 5rem;
-      }
-
-      .sm {
-        margin-left: 6px;
-        font-size: 2rem;
-        @media (min-width: 721px) and (max-width: 789px) {
-          display: none;
-        }
-      }
+      object-fit: contain;
     }
     @media (max-width: 768px) {
       .logo-img {
         width: 100px;
       }
-      .name {
-        height: 128px;
-        .bg {
-          font-size: 4.5rem;
-        }
+      .domain-banner {
+        height: 60px;
       }
     }
 
@@ -166,28 +137,5 @@ watch(
       pointer-events: none;
     }
   }
-  // @media (max-width: 390px) {
-  //   .logo {
-  //     flex-direction: column;
-  //     .logo-img {
-  //       display: none;
-  //     }
-  //     .name {
-  //       margin-left: 0;
-  //       height: auto;
-  //       transform: none;
-  //       text-align: center;
-  //       .bg {
-  //         font-size: 3.5rem;
-  //       }
-  //       .sm {
-  //         font-size: 1.4rem;
-  //       }
-  //     }
-  //   }
-  //   .description {
-  //     margin-top: 2.5rem;
-  //   }
-  // }
 }
 </style>
