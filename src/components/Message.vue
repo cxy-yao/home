@@ -3,8 +3,8 @@
   <div class="message">
     <!-- Logo -->
     <div class="logo">
-      <img class="logo-img" :src="siteLogo" alt="logo" />
-      <img class="domain-banner" src="/images/domain-banner.png" alt="chulinchen.top" />
+      <img class="logo-img" src="/images/logo-transparent.png" alt="ChenChuLin" />
+      <img class="domain-banner" src="/images/domain-banner-transparent.png" alt="chulinchen.top" />
     </div>
     <!-- 简介 -->
     <div class="description cards" @click="changeBox">
@@ -32,9 +32,6 @@ import { QuoteLeft, QuoteRight } from "@vicons/fa";
 import { Error } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
 const store = mainStore();
-
-// 主页站点logo
-const siteLogo = import.meta.env.VITE_SITE_MAIN_LOGO;
 
 // 简介区域文字
 const descriptionText = reactive({
@@ -81,19 +78,35 @@ watch(
     align-items: center;
     animation: fade 0.5s;
     max-width: 460px;
+    gap: 16px;
+    
     .logo-img {
-      border-radius: 50%;
       width: 120px;
+      height: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
     }
+    
     .domain-banner {
       height: 80px;
-      padding-left: 22px;
-      transform: translateY(-8px);
       object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.2));
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
     }
+    
     @media (max-width: 768px) {
       .logo-img {
         width: 100px;
+        height: 100px;
       }
       .domain-banner {
         height: 60px;
@@ -102,6 +115,8 @@ watch(
 
     @media (max-width: 720px) {
       max-width: 100%;
+      flex-direction: column;
+      gap: 12px;
     }
   }
 
