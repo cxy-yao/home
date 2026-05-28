@@ -81,8 +81,8 @@ watch(
     gap: 16px;
     
     .logo-img {
-      width: 120px;
-      height: 120px;
+      width: 180px;
+      height: 180px;
       object-fit: contain;
       filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
       transition: transform 0.3s ease;
@@ -93,7 +93,7 @@ watch(
     }
     
     .domain-banner {
-      height: 80px;
+      height: 120px;
       object-fit: contain;
       filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.2));
       transition: transform 0.3s ease;
@@ -105,11 +105,11 @@ watch(
     
     @media (max-width: 768px) {
       .logo-img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
       }
       .domain-banner {
-        height: 60px;
+        height: 90px;
       }
     }
 
