@@ -138,7 +138,7 @@ watch(
       }
       
       .domain-banner {
-        height: 120px;
+        height: 200px;
         object-fit: contain;
         position: relative;
         z-index: 1;
@@ -171,7 +171,7 @@ watch(
       }
       
       .banner-wrapper .domain-banner {
-        height: 90px;
+        height: 160px;
       }
     }
 
