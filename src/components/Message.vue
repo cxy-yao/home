@@ -86,8 +86,8 @@ watch(
     
     .logo-wrapper {
       position: relative;
-      width: 180px;
-      height: 180px;
+      width: 250px;
+      height: 250px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -96,16 +96,16 @@ watch(
       &::before {
         content: '';
         position: absolute;
-        width: 160px;
-        height: 160px;
+        width: 220px;
+        height: 220px;
         background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
         border-radius: 50%;
         z-index: 0;
       }
       
       .logo-img {
-        width: 180px;
-        height: 180px;
+        width: 250px;
+        height: 250px;
         object-fit: contain;
         position: relative;
         z-index: 1;
@@ -156,17 +156,17 @@ watch(
     
     @media (max-width: 768px) {
       .logo-wrapper {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         
         &::before {
-          width: 130px;
-          height: 130px;
+          width: 180px;
+          height: 180px;
         }
         
         .logo-img {
-          width: 150px;
-          height: 150px;
+          width: 200px;
+          height: 200px;
         }
       }
       
