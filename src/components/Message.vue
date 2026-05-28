@@ -86,8 +86,8 @@ watch(
     
     .logo-wrapper {
       position: relative;
-      width: 320px;
-      height: 320px;
+      width: 250px;
+      height: 250px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -96,16 +96,16 @@ watch(
       &::before {
         content: '';
         position: absolute;
-        width: 280px;
-        height: 280px;
+        width: 220px;
+        height: 180px;
         background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
         border-radius: 50%;
         z-index: 0;
       }
       
       .logo-img {
-        width: 320px;
-        height: 320px;
+        width: 250px;
+        height: 250px;
         object-fit: contain;
         position: relative;
         z-index: 1;
@@ -138,7 +138,7 @@ watch(
       }
       
       .domain-banner {
-        height: 280px;
+        height: 180px;
         object-fit: contain;
         position: relative;
         z-index: 1;
@@ -156,8 +156,8 @@ watch(
     
     @media (max-width: 768px) {
       .logo-wrapper {
-        width: 260px;
-        height: 280px;
+        width: 200px;
+        height: 180px;
         
         &::before {
           width: 180px;
@@ -165,13 +165,13 @@ watch(
         }
         
         .logo-img {
-          width: 260px;
-          height: 280px;
+          width: 200px;
+          height: 180px;
         }
       }
       
       .banner-wrapper .domain-banner {
-        height: 220px;
+        height: 180px;
       }
     }
 
