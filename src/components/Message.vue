@@ -85,7 +85,8 @@ watch(
     .logo-img {
       border-radius: 50%;
       width: 120px;
-      filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.3));
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
       transition: transform 0.3s ease;
       
       &:hover {
@@ -94,18 +95,22 @@ watch(
     }
     
     .name {
-      width: 100%;
-      padding-left: 22px;
+      padding-left: 20px;
       transform: translateY(-8px);
       font-family: "Pacifico-Regular";
+      overflow: visible;
+      white-space: nowrap;
 
       .bg {
-        font-size: 5rem;
+        font-size: 3.5rem;
+        background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       .sm {
-        margin-left: 6px;
-        font-size: 2rem;
+        margin-left: 4px;
+        font-size: 1.8rem;
         background: linear-gradient(135deg, #818cf8, #22d3ee);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -120,9 +125,11 @@ watch(
         width: 100px;
       }
       .name {
-        height: 128px;
         .bg {
-          font-size: 4.5rem;
+          font-size: 3rem;
+        }
+        .sm {
+          font-size: 1.4rem;
         }
       }
     }
