@@ -95,14 +95,14 @@ watch(
     }
     
     .name {
-      padding-left: 20px;
+      padding-left: 12px;
       transform: translateY(-8px);
       font-family: "Pacifico-Regular";
       overflow: visible;
       white-space: nowrap;
 
       .bg {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -110,7 +110,7 @@ watch(
 
       .sm {
         margin-left: 4px;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         background: linear-gradient(135deg, #818cf8, #22d3ee);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -126,10 +126,10 @@ watch(
       }
       .name {
         .bg {
-          font-size: 3rem;
+          font-size: 2.5rem;
         }
         .sm {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
         }
       }
     }
