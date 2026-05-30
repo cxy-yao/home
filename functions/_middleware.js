@@ -1,10 +1,11 @@
 export async function onRequest(context) {
   const host = new URL(context.request.url).hostname;
   
-  // Only allow chulinchen.top
-  if (host !== 'chulinchen.top') {
-    return new Response(null, { status: 403 });
+  // Allow chulinchen.top and www.chulinchen.top
+  if (host === 'chulinchen.top' || host === 'www.chulinchen.top') {
+    return context.next();
   }
   
-  return context.next();
+  // Block everything else (pages.dev etc)
+  return new Response(null, { status: 403 });
 }
