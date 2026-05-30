@@ -1,12 +1,10 @@
 export async function onRequest(context) {
-  const url = new URL(context.request.url);
-  const host = url.hostname;
+  const host = new URL(context.request.url).hostname;
   
-  // Block .pages.dev access
-  if (host.endsWith('.pages.dev')) {
+  // Only allow chulinchen.top
+  if (host !== 'chulinchen.top') {
     return new Response(null, { status: 403 });
   }
   
-  // Normal request - continue to page
   return context.next();
 }
