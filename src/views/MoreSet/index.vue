@@ -18,7 +18,9 @@
         </div>
         <div class="version">
           <div class="num">v&nbsp;{{ config.version }}</div>
-
+          <el-tooltip content="Github 源代码仓库" placement="right" :show-arrow="false">
+            <github-one class="github" theme="outline" size="24" />
+          </el-tooltip>
         </div>
         <el-card class="update">
           <template #header>
@@ -50,7 +52,7 @@
 </template>
 
 <script setup>
-import { CloseOne, SettingTwo, AddOne, Bug } from "@icon-park/vue-next";
+import { CloseOne, SettingTwo, GithubOne, AddOne, Bug } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
 import Set from "@/components/Set.vue";
 import config from "@/../package.json";
