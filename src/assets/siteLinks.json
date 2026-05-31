@@ -2,11 +2,6 @@
   {
     "icon": "Blog",
     "name": "博客",
-    "link": "https://cxy-yao.github.io/blog/"
-  },
-  {
-    "icon": "LaptopCode",
-    "name": "GitHub",
-    "link": "https://github.com/cxy-yao"
+    "link": "https://blog-cxy.pages.dev"
   }
 ]
