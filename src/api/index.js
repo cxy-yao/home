@@ -67,9 +67,38 @@ export const getWeather = async (key, city) => {
   return await res.json();
 };
 
-// 获取教书先生天气 API
-// https://api.oioweb.cn/doc/weather/GetWeather
+// 获取 wttr.in 天气 API（免费，无需 Key，自动 IP 定位）
+// https://wttr.in/:help
 export const getOtherWeather = async () => {
-  const res = await fetch("https://api.oioweb.cn/api/weather/GetWeather");
-  return await res.json();
+  const res = await fetch("https://wttr.in/?format=j1&lang=zh");
+  const data = await res.json();
+  const current = data.current_condition[0];
+  const area = data.nearest_area[0];
+  // 兼容原有数据结构
+  return {
+    result: {
+      city: {
+        City: area.areaName[0].value,
+      },
+      condition: {
+        day_weather:
+          (current.lang_zh && current.lang_zh[0]?.value) ||
+          current.weatherDesc[0]?.value ||
+          "未知",
+        min_degree: current.temp_C,
+        max_degree: current.FeelsLikeC || current.temp_C,
+        day_wind_direction: (() => {
+          const dir = current.winddir16Point || "";
+          const dirMap = {
+            N: "北风", NNE: "北东北风", NE: "东北风", ENE: "东东北风",
+            E: "东风", ESE: "东东南风", SE: "东南风", SSE: "南东南风",
+            S: "南风", SSW: "南西南风", SW: "西南风", WSW: "西西南风",
+            W: "西风", WNW: "西西北风", NW: "西北风", NNW: "北西北风",
+          };
+          return dirMap[dir] || dir;
+        })(),
+        day_wind_power: Math.round(Number(current.windspeedKmph) / 10) || "≤3",
+      },
+    },
+  };
 };

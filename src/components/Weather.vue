@@ -65,7 +65,7 @@ const getWeatherData = async () => {
       };
       weatherData.weather = {
         weather: data.condition.day_weather,
-        temperature: getTemperature(data.condition.min_degree, data.condition.max_degree),
+        temperature: data.condition.min_degree,
         winddirection: data.condition.day_wind_direction,
         windpower: data.condition.day_wind_power,
       };
