@@ -116,12 +116,14 @@ onMounted(() => {
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
     }
     .from {
       margin-top: 10px;
       font-weight: bold;
       align-self: flex-end;
       font-size: 1.1rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.3);
     }
   }
 }

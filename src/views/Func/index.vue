@@ -116,6 +116,7 @@ onBeforeUnmount(() => {
       .time {
         font-size: 1.1rem;
         text-align: center;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3);
         .date {
           text-overflow: ellipsis;
           overflow-x: hidden;
